@@ -68,6 +68,14 @@ uint8_t bluetoothMessageData[3];
 uint8_t batteryVoltage = 0; 
 uint8_t batteryLevel = 0; 
 
+// Custom Sound related
+int forwardMelody [3] = {4, 4, 4};
+uint16_t forward[3] = {NOTE_C5, NOTE_E5, NOTE_G5};
+int leftMelody [3] = {4, 4, 4};
+uint16_t leftTone[3] = {NOTE_C3, NOTE_C3, NOTE_C3};
+int rightMelody [3] = {4, 4, 4};
+uint16_t rightTone[3] = {NOTE_C6, NOTE_C6, NOTE_C6};
+
 /*********************************************************************************************************************************************************
   * @instances
 /*********************************************************************************************************************************************************/
@@ -324,7 +332,7 @@ void Cubetto::decodeInterfaceInstructions (uint8_t command)
 		case CUBETTO_MESSAGE_MOVEMENT:	
 		{
 			uint8_t Direction = bluetoothMessageData[0]; 
-			if (Direction & 0x80){playForwardTone(); Direction &= 0x7F;} // Check if we are the instruction of a sequence
+			if (Direction & 0x80){Direction &= 0x7F;} // Check if we are the instruction of a sequence
 			// Move direction
 			switch (Direction){
 				case CUBETTO_FORWARD:
@@ -700,9 +708,14 @@ void Cubetto::playBeepTone ()
 /*********************************************************************************************************************************************************/
 void Cubetto::playForwardTone()
 {
-  tone(IO_SOUNDER, 3000);
-  delay(150);
-  noTone(IO_SOUNDER);
+	int length = sizeof(forwardMelody) / sizeof(forwardMelody[0]);
+	for (int i=0; i< length; i++ ) {
+		int noteDuration = 1000 / forwardMelody[i];
+		tone(IO_SOUNDER, forward[i], noteDuration);
+		int pauseBetweenNotes = noteDuration * 1.30;
+		delay(pauseBetweenNotes);
+		noTone(IO_SOUNDER);
+	}
 }
 
 /*********************************************************************************************************************************************************
@@ -726,9 +739,14 @@ void Cubetto::playBackwardTone()
 /*********************************************************************************************************************************************************/
 void Cubetto::playLeftTone()
 {
-  tone(IO_SOUNDER, 5000);
-  delay(50);
-  noTone(IO_SOUNDER);
+  int length = sizeof(leftMelody) / sizeof(leftMelody[0]);
+	for (int i=0; i< length; i++ ) {
+		int noteDuration = 1000 / leftMelody[i];
+		tone(IO_SOUNDER, leftTone[i], noteDuration);
+		int pauseBetweenNotes = noteDuration * 1.30;
+		delay(pauseBetweenNotes);
+		noTone(IO_SOUNDER);
+	}
 }
 
 /*********************************************************************************************************************************************************
@@ -739,9 +757,14 @@ void Cubetto::playLeftTone()
 /*********************************************************************************************************************************************************/
 void Cubetto::playRightTone()
 {
-  tone(IO_SOUNDER, 4000);
-  delay(50);
-  noTone(IO_SOUNDER);
+	int length = sizeof(rightMelody) / sizeof(rightMelody[0]);
+	for (int i=0; i< length; i++ ) {
+		int noteDuration = 1000 / rightMelody[i];
+		tone(IO_SOUNDER, rightTone[i], noteDuration);
+		int pauseBetweenNotes = noteDuration * 1.30;
+		delay(pauseBetweenNotes);
+		noTone(IO_SOUNDER);
+	}
 }
 
 /*********************************************************************************************************************************************************
