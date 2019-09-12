@@ -1,8 +1,10 @@
 .PHONY: dist
 
 dist:
-	rm -rf dist
-	mkdir -p dist
-	cd AccelStepper && zip -r ../dist/AccelStepper.zip . & cd ..
-	cd CubettoLibrary && zip -r ../dist/CubettoLibrary.zip . && cd ..
-	cp -R PrimoCubettoOOBExample dist
+	rm -rf build
+	rm -f Cubetto.zip
+	mkdir -p build
+	cd AccelStepper && zip -r ../build/AccelStepper.zip . && cd ..
+	cd CubettoLibrary && zip -r ../build/CubettoLibrary.zip . && cd ..
+	cp -R PrimoCubettoOOBExample build
+	cd build && zip -r ../Cubetto.zip . && cd ..
