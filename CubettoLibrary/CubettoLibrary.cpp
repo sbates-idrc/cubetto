@@ -11,6 +11,7 @@
 /*********************************************************************************************************************************************************/
 #include "Arduino.h"
 #include "CubettoLibrary.h"
+#include "CubettoSpeech.h"
 #include "AccelStepper.h"
 #include <SPI.h>
 #include "lib_aci.h"
@@ -570,7 +571,8 @@ void Cubetto::moveForward()
 	left.move(STEPPER_FORWARD_STEPS);
 	right.move(-STEPPER_FORWARD_STEPS);
 	move();
-	playForwardTone(); 	
+    //playForwardTone();
+	sayForward(IO_SOUNDER);
 }
 
 /*********************************************************************************************************************************************************
