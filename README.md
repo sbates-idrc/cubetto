@@ -2,18 +2,18 @@ This repo contains source code for the Cubetto robot.
 
 This is an unofficial repository and the contents were retrieved from: https://drive.google.com/file/d/0B0CGyWe9uilVc0Nycms2QnFJOTg/view
 
-#How to Change Cubetto's Sound Output 
+# How to Change Cubetto's Sound Output 
 
-##Prerequisite
-###Hardware: 
-Cubetto : [Primotoys](https://www.primotoys.com)
+## Prerequisite
+### Hardware: 
+Cubetto : [Primotoys](https://www.primotoys.com) <br>
 Micro-B USB cable
 
-###Software: 
-Arduino IDE : [Arduino](https://www.arduino.cc/en/Main/Software)
+### Software: 
+Arduino IDE : [Arduino](https://www.arduino.cc/en/Main/Software) <br>
 Modified Cubetto source code: https://github.com/chosww/cubetto/releases/download/audio-feedback-0.1/Cubetto.zip
 
-##How to update Cubetto’s source code
+## How to update Cubetto’s source code
 
 1. Unzip the downloaded source code from the prerequisite. 
 2. After Installing Arduino IDE, open the IDE.
