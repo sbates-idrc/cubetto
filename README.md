@@ -1,35 +1,82 @@
+# Cubetto
+
 This repo contains source code for the Cubetto robot.
 
 This is an unofficial repository and the contents were retrieved from: https://drive.google.com/file/d/0B0CGyWe9uilVc0Nycms2QnFJOTg/view
 
-# How to Change Cubetto's Sound Output 
+## Customized Movement Tones
 
-## Prerequisite
-### Hardware: 
-Cubetto : [Primotoys](https://www.primotoys.com) <br>
-Micro-B USB cable
+This branch contains modifications that customize the tones played when moving Forward, Left, and Right.
 
-### Software: 
-Arduino IDE : [Arduino](https://www.arduino.cc/en/Main/Software) <br>
-Modified Cubetto source code: https://github.com/chosww/cubetto/releases/download/audio-feedback-0.1/Cubetto.zip
+## How to Update Cubetto’s Firmware
 
-## How to update Cubetto’s source code
+### Prerequisites
 
-1. Unzip the downloaded source code from the prerequisite. 
-2. After Installing Arduino IDE, open the IDE.
-3. On Arduino IDE, update the two ZIP files AccelStepper.zip and CubettoLibrary.zip from the source code by pressing Sketch at the menu then press Include Library, and click Add .ZIP Library. <br>
-![includeLibrary](includeLibrary.png)
-4. Check if the upload was successful by checking at the status bar at the bottom of IDE. <br>
-![uploaded](uploaded.png)
-5. Open Cubetto’s hardware by unscrewing 4 bolts at the top. <br>
-![cubettoCover](cubettoCover.png)
-6. Connect the Arduino board of Cubetto to your computer by using a micro USB cable. <br>
-![microUSBPort](microUSBPort.png)
-7. Go back to Arduino IDE and press tools then click Board then Arduino/Genuino Zero, and if you have to specify a port, select Arduino/Genuino Zero (Native USB Port). <br>
-![boardAndPort](boardAndPort.png)
-8. Again press tools then click Port, and select port that Arduino board is connected.
-9. Open the Arduino sketch that was included in the source code by double clicking on the file in PrimoCubettoOOBExample folder or by pressing file, open and move to the directory where the downloaded sketch is and click open. 
-10. Press upload button from the sketch (arrow key at the top side of the IDE). <br>
-![uploadButton](uploadButton.png)
-11. Once it’s uploaded successfully, you will see Done uploading message at the status bar. <br>
-![doneUploading](doneUploading.png)
+Hardware:
+
+- [Cubetto](https://www.primotoys.com)
+- Micro-B USB cable
+
+Software:
+
+- [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+
+### Steps
+
+#### 1. Download the modified Cubetto source code
+
+Download and unzip the modified Cubetto source code:
+
+https://github.com/chosww/cubetto/releases/download/audio-feedback-0.1/Cubetto.zip
+
+#### 2. Open the Arduino IDE
+
+Open the Arduino IDE.
+
+#### 3. Add the Cubetto library files
+
+In Arduino IDE, add the `AccelStepper.zip` and `CubettoLibrary.zip` files from the downloaded source code by opening the Sketch menu, then the Include Library sub-menu, and clicking "Add .ZIP Library..."
+
+![](images/includeLibrary.png)
+
+A message will be displayed in the status bar at the bottom of IDE if the library is uploaded successfully.
+
+![Screenshot of successful upload: Library added to your libraries. Check "include library" menu](uploaded.png)
+
+#### 4. Remove the Cubetto robot cover
+
+Remove the cover from the Cubetto robot by unscrewing 4 bolts on the top.
+
+![](images/cubettoCover.png)
+
+#### 5. Connect the Cubetto board to your computer
+
+Connect the Arduino board of Cubetto to your computer using a micro USB cable.
+
+![](images/microUSBPort.png)
+
+#### 6. Select "Arduino/Genuino Zero" in the Arduino IDE
+
+We need to tell the Arduino IDE that the Cubetto board is compatible with the Arduino Zero board: In Arduino IDE, open the Tools menu, then the Board sub-menu, and select "Arduino/Genuino Zero". If you have to specify a port, select Arduino/Genuino Zero (Native USB Port).
+
+If "Arduino/Genuino Zero" is not available as an option, it can be installed using the "Boards Manager", available on the Board sub-menu.
+
+![](images/boardAndPort.png)
+
+#### 7. Select the port that the Cubetto is attached to
+
+In the Arduino IDE, open the Tools menu, click Port, and select port that Arduino board is connected.
+
+#### 8. Open modified the source code project
+
+In the Arduino IDE, open the File menu, and click "Open...". Navigate to the downloaded and unzipped source code (from Step 1 above), and open the `PrimoCubettoOOBExample.ino` file in the PrimoCubettoOOBExample directory.
+
+#### 9. Upload the new firmware to Cubetto
+
+The firmware may be uploaded to Cubetto by clicking on the "Upload" button (a rightwards pointing arrow in the IDE toolbar), or by selecting "Upload" from the "Sketch" menu.
+
+![](images/uploadButton.png)
+
+A message will be displayed in the status bar at the bottom of IDE if the firmware is uploaded successfully.
+
+![Screenshot of successful upload: Done uploading](doneUploading.png)
