@@ -35,13 +35,13 @@ Open the Arduino IDE.
 
 #### 3. Add the Cubetto library files
 
-In Arduino IDE, add the `AccelStepper.zip` and `CubettoLibrary.zip` files from the downloaded source code by opening the Sketch menu, then the Include Library sub-menu, and clicking "Add .ZIP Library..."
+In Arduino IDE, add the `AccelStepper.zip` and `CubettoLibrary.zip` libraries from the downloaded source code: For each of the two libraries, open the Sketch menu, then the "Include Library" sub-menu, click "Add .ZIP Library...", and select the library file from the downloaded source code.
 
 ![](images/includeLibrary.png)
 
 A message will be displayed in the status bar at the bottom of IDE if the library is uploaded successfully.
 
-![Screenshot of successful upload: Library added to your libraries. Check "include library" menu](uploaded.png)
+![Screenshot of successful upload: Library added to your libraries. Check 'include library' menu](images/uploaded.png)
 
 #### 4. Remove the Cubetto robot cover
 
@@ -59,9 +59,9 @@ Connect the Arduino board of Cubetto to your computer using a micro USB cable.
 
 We need to tell the Arduino IDE that the Cubetto board is compatible with the Arduino Zero board: In Arduino IDE, open the Tools menu, then the Board sub-menu, and select "Arduino/Genuino Zero". If you have to specify a port, select Arduino/Genuino Zero (Native USB Port).
 
-If "Arduino/Genuino Zero" is not available as an option, it can be installed using the "Boards Manager", available on the Board sub-menu.
-
 ![](images/boardAndPort.png)
+
+If "Arduino/Genuino Zero" is not available as an option, it can be installed using the "Boards Manager", available on the Board sub-menu.
 
 #### 7. Select the port that the Cubetto is attached to
 
@@ -79,4 +79,4 @@ The firmware may be uploaded to Cubetto by clicking on the "Upload" button (a ri
 
 A message will be displayed in the status bar at the bottom of IDE if the firmware is uploaded successfully.
 
-![Screenshot of successful upload: Done uploading](doneUploading.png)
+![Screenshot of successful upload: Done uploading](images/doneUploading.png)
